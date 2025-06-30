@@ -9,7 +9,7 @@ def ProcessTheClient(connection, address):
     try:
         headers_data = b""
         while True:
-            data = connection.recv(1)
+            data = connection.recv(1024)
             if not data or (data == b'\n' and headers_data.endswith(b'\r\n\r\n')):
                 break
             headers_data += data
