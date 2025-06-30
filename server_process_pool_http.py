@@ -49,11 +49,8 @@ def ProcessTheClient(connection, address):
         logging.error(f"Error processing client {address}: {e}")
     finally:
         connection.close()
-        # --- PERUBAHAN DI SINI ---
-        # Logging koneksi ditutup diaktifkan kembali sesuai permintaan
         logging.info(f"Connection with {address} closed.")
-        # --- AKHIR PERUBAHAN ---
-        
+      
 def main():
     logging.basicConfig(level=logging.INFO, format='[%(levelname)s] (%(processName)-10s) %(message)s')
     my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
